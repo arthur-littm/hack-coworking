@@ -1,7 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container home">
+  <p class="tagline my-5">Snap the <strong>best desks</strong> based on your needs.</p>
+  <%= link_to "Select Seat", "#", class: "btn btn-primary" %>
+  <div class="my-2">
+    <%= link_to "I don't care, give me a random seat.", "#" %>
+  </div>
+  <%= image_tag "illustration.svg", class: "illustration d-block d-sm-none" %>
+</div>
 
-<form id="area-price-calculator">
-
-  <span id="price">0</span>
-</form>
