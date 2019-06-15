@@ -30,7 +30,7 @@ csv.each do |row|
   when 'Common area'
     Area.create(name: area['AreaLabel'], desk_number: area['Capacity'].to_i)
   when 'Meeting room'
-    Room.create(name: area['AreaLabel'], capacity: area['Capacity'].to_i, area: Area.take(1).first)
+    Room.create(name: area['AreaLabel'], capacity: area['Capacity'].to_i, area: Area.all.sample)
   when 'Office'
     Area.create(name: area['AreaLabel'], desk_number: area['Capacity'].to_i)
   end
