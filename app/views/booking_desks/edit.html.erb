@@ -6,7 +6,7 @@
         <div class="booking-choices">
           <% @other_bookings.each do |booking| %>
             <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= booking.id %>" name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= booking.id %>">
-            <label class="collection_check_boxes area-preference"><%= booking.user.job %></label>
+            <label class="collection_check_boxes area-preference select-one"><%= booking.user.job %></label>
           <% end %>
         </div>
         <hr>
