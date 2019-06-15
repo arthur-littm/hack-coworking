@@ -2,9 +2,9 @@ class BookingDesk < ActiveRecord::Base
   belongs_to :desk
   belongs_to :user
 
-  validates :starts_at
-  validates :ends_at
-  validates :desk_available?
+  # validates :starts_at
+  # validates :ends_at
+  validate :desk_available?
 
   private
 
