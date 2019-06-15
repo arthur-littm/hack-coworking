@@ -10,3 +10,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar button:focus {
+  outline: none;
+  border: 1px solid $primary;
+}
+
+.balance {
+  margin-right: 16px;
+}
