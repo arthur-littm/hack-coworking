@@ -1,0 +1,42 @@
+.user-banner {
+  background: $primary;
+  padding-top: 48px;
+}
+
+.user-img {
+  position: relative;
+  top: 24px;
+  border-radius: 4px;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.user-info {
+  position: relative;
+  top: 24px;
+  padding-left: 16px;
+  color: white;
+  p {
+    opacity: .6;
+  }
+
+}
+
+.user-section {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  .header {
+    font-weight: bold;
+  }
+  .content {
+    opacity: .6;
+    margin: 0;
+  }
+  i {
+    color: $primary;
+  }
+}
+

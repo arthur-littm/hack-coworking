@@ -3,6 +3,14 @@
   background: white;
 }
 
+.navbar-green {
+  background: $primary;
+  color: white;
+  .navbar-brand {
+    color: white;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

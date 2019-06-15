@@ -1,4 +1,4 @@
-<div class="navbar navbar-light navbar-lewagon">
+<div class="navbar navbar-light navbar-lewagon <%= "navbar-green" if params[:controller] == "users" && params[:action] == "show" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     Snap Desk
     <% end %>

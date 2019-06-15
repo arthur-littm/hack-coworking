@@ -8,4 +8,11 @@ class User < ApplicationRecord
     balance ? balance : 0
   end
 
+  def displayed_name
+    name ? name : "Sebastien Saunier"
+  end
+
+  def displayed_job
+    job ? job : "No listed job."
+  end
 end
