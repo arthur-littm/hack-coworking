@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :booking_rooms
   has_many :proposed_lunches,  foreign_key: :proposer_id, class_name: 'Lunch'
   has_many :receiver_lunches,  foreign_key: :recceiver_id, class_name: 'Lunch'
   has_many :receivers, through: :proposed_lunches
