@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <%= @booking_desk.desk.nil? ? "No desk" : "Desk" %>
       <%= simple_form_for @booking_desk do |f| %>
-        <p>These are some of the other skillsets sitting in the same room as you - do you have a preference who you sit near?</p>
-        <% @other_bookings.each do |booking| %>
-          <p><%= booking.user.job %></p>
-        <% end %>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+        <p>Would you like to sit next to a</p>
+        <div class="booking-choices">
+          <% @other_bookings.each do |booking| %>
+            <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= booking.id %>" name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= booking.id %>">
+            <label class="collection_check_boxes area-preference"><%= booking.user.job %></label>
+          <% end %>
+        </div>
+        <hr>
+        <%= link_to 'I don\'t care who I sit next to', booking_desk_path(@booking_desk), class: 'btn btn-gray' %>
+        <hr>
+        <!-- TODO: update with price of booking %> -->
+        <%= f.button :submit, "Book a seat (100 SB)", class: "btn btn-primary" %>
       <% end %>
-      <%= link_to 'I don\'t care', booking_desk_path(@booking_desk) %>
+
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'checkboxes' %>
