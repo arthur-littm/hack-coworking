@@ -1,0 +1,36 @@
+<% my_profile = current_user == @user %>
+
+<div class="user-banner">
+  <div class="container">
+    <div class="d-flex">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "user-img" %>
+      <div class="user-info">
+        <h3><%= @user.displayed_name %></h3>
+        <p><%= @user.displayed_job %></p>
+        <% if my_profile %>
+          <p><i class="fas fa-coins"></i> <%= @user.balance %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container pt-5">
+  <div class="user-section">
+    <p class="header">About me</p>
+    <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo totam aliquam asperiores! Magnam esse praesentium dignissimos.</p>
+  </div>
+  <div class="user-section">
+    <p class="header">My desk today</p>
+    <div class="d-flex justify-content-between align-items-center my-2">
+      <p class="content">Creative Hub, Floor 1, Desk</p>
+      <%= link_to "Get Directions", "#", class: "btn btn-primary btn-sm"  %>
+    </div>
+
+  </div>
+  <div class="user-section">
+    <p><i class="fas fa-calendar-week"></i> <%= link_to "Book a meeting room", "#" %></p>
+    <p class="m-0"><i class="fas fa-coins"></i> <%= link_to "Earn more bucks", "#" %></p>
+
+  </div>
+
+</div>
