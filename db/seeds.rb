@@ -48,7 +48,3 @@ Area.all.each do |area|
 end
 
 
-
-
-
-

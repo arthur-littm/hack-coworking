@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   resources :booking_rooms, only: [ :show, :destroy ]
 
   get 'users/:id', to: "users#show", as: :user_account
-
-  resources :desks do
-    resources :booking_desks, only: [ :new, :create ]
-  end
-  resources :booking_desks, only: [ :show, :destroy ]
+  resources :desks
+  resources :booking_desks, only: [ :show, :destroy, :new, :create, :edit, :update ]
 end
