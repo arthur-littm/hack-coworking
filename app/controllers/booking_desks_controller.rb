@@ -16,11 +16,13 @@ class BookingDesksController < ApplicationController
 
   def update
     # todo save the preference on who he wants to sit next to
+    current_user.balance -= @booking_desk.price
+    current_user.save
+
     redirect_to booking_desk_path(@booking_desk)
   end
 
   def create
-    raise
     @booking_desk = BookingDesk.new(starts_at: Date.today, ends_at: Date.today + 1)
     @booking_desk.user = current_user
     @booking_desk.price = params[:booking_desk][:price].to_f
