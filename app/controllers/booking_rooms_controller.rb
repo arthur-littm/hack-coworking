@@ -2,7 +2,7 @@ class BookingRoomsController < ApplicationController
   before_action :set_room, only: [ :create, :new ]
 
   def show
-
+    @booking_room = BookingRoom.find(params[:id])
   end
 
   def new
@@ -22,7 +22,6 @@ class BookingRoomsController < ApplicationController
       render :new, notice: "Something went wrong"
     end
   end
-
 
   private
 
