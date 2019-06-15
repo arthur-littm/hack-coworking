@@ -23,7 +23,7 @@ class BookingDesksController < ApplicationController
     @booking_desk = BookingDesk.new(starts_at: Date.today, ends_at: Date.today + 1)
     @booking_desk.user = current_user
     if @booking_desk.save
-      tags = params[:booking_desk_tags][:tag].select {|t| t.present?}
+      tags = params[:booking_desk][:booking_desk_tags][:tag].select {|t| t.present?}
       if tags.any?
         tags.each {|t| BookingDeskTag.create(tag_id: t, booking_desk: @booking_desk)}
       end
