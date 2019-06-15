@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_130254) do
+ActiveRecord::Schema.define(version: 2019_06_15_132239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_06_15_130254) do
 
   create_table "desks", force: :cascade do |t|
     t.string "name"
-    t.boolean "available", default: false
     t.bigint "area_id"
     t.index ["area_id"], name: "index_desks_on_area_id"
   end
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 2019_06_15_130254) do
     t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "available", default: false
     t.index ["area_id"], name: "index_rooms_on_area_id"
   end
 
