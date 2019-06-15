@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_163922) do
     t.date "ends_at"
     t.bigint "user_id"
     t.bigint "desk_id"
+    t.float "price", default: 95.0
     t.index ["desk_id"], name: "index_booking_desks_on_desk_id"
     t.index ["user_id"], name: "index_booking_desks_on_user_id"
   end
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_163922) do
     t.bigint "room_id"
     t.datetime "starts_at"
     t.datetime "ends_at"
+    t.float "price", default: 100.0
     t.index ["room_id"], name: "index_booking_rooms_on_room_id"
     t.index ["user_id"], name: "index_booking_rooms_on_user_id"
   end
