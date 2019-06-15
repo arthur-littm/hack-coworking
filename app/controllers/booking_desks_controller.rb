@@ -21,14 +21,18 @@ class BookingDesksController < ApplicationController
 
   def update
     # todo save the preference on who he wants to sit next to
+    current_user.balance -= @booking_desk.price
+    current_user.save
+
     redirect_to booking_desk_path(@booking_desk)
   end
 
   def create
     @booking_desk = BookingDesk.new(starts_at: Date.today, ends_at: Date.today + 1)
     @booking_desk.user = current_user
+    @booking_desk.price = params[:booking_desk][:price].to_f
     if @booking_desk.save
-      tags = params[:booking_desk_tags][:tag].select {|t| t.present?}
+      tags = params[:booking_desk][:booking_desk_tags][:tag].select {|t| t.present?}
       if tags.any?
         tags.each {|t| BookingDeskTag.create(tag_id: t, booking_desk: @booking_desk)}
       end
@@ -53,6 +57,6 @@ class BookingDesksController < ApplicationController
   end
 
   def booking_desk_params
-    params.require(:booking_desk).permit(:starts_at, :ends_at)
+    params.require(:booking_desk).permit(:starts_at, :ends_at, :price)
   end
 end
