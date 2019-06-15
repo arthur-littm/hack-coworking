@@ -1,0 +1,12 @@
+<div class="container">
+  <% @rooms.each do |room| %>
+    <div class="col-sm-12">
+      <%= link_to new_room_booking_room_path(room) do %>
+        Area <%= room.area.name %>
+        <br>
+        Room: <%= room.name %>
+        Capacity <%= room.capacity %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
