@@ -3,7 +3,14 @@ class BookingDesksController < ApplicationController
   before_action :set_booking_desk, only: [ :show, :update, :edit ]
 
   def show
-
+    @other_bookings = BookingDesk.joins(:desk)
+                                .where("desks.area_id = #{@booking_desk.desk.area.id}")
+                                .where(starts_at: @booking_desk.starts_at)
+                                .where.not(user: current_user)
+    @jobs = Hash.new(0)
+    @other_bookings.each do |b|
+      @jobs[b.user.job] += 1
+    end
   end
 
   def new

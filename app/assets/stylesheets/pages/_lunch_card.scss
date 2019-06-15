@@ -1,0 +1,55 @@
+.lunch-card {
+  background-color:  white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition-timing-function: ease-out;
+  transition: 0.7s;
+}
+
+.lunch-title {
+  font-size: 30px;
+  margin-bottom: 3rem !important;
+  margin-top: 3rem !important;
+  text-align: center;
+}
+
+.active-card {
+  border: 2px solid $primary;
+}
+
+
+.short-bio {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+}
+
+.lunch-card > .long-bio {
+  transition-timing-function: ease-out;
+  transition: 0.7s;
+  display: none;
+}
+
+.lunch-card.active-card > .long-bio {
+  transition-timing-function: ease-out;
+  transition: 0.7s;
+  width: 100%;
+  text-align: center;
+  display: block
+}
+
+.long-bio {
+  // padding: 16px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-infos {
+  padding-left: 16px;
+}
