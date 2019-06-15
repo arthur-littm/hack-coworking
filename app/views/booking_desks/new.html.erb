@@ -8,7 +8,7 @@
           <input type="hidden" name="booking_desk[booking_desk_tags][tag][]" value="">
           <div class="booking-choices">
             <% Tag.all.each do |tag| %>
-              <div class="form-check booking-choice-container">
+              <div class="booking-choice-container">
                 <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="booking_desk[booking_desk_tags][tag][]" id="booking_desk_booking_desk_tags_tag_<%= tag.id %>">
                 <label class="collection_check_boxes booking-choice" for="booking_desk_booking_desk_tags_tag_<%= tag.id %>"><%= tag.description %></label>
               </div>

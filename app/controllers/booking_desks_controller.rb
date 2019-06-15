@@ -27,6 +27,7 @@ class BookingDesksController < ApplicationController
       if tags.any?
         tags.each {|t| BookingDeskTag.create(tag_id: t, booking_desk: @booking_desk)}
       end
+      # raise
       # TODO (arthur-littm) make this work with the selected tags that match with the desk
       @booking_desk.desk = Desk.all.sample
       @booking_desk.save
