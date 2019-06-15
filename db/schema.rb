@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_170716) do
+
+ActiveRecord::Schema.define(version: 2019_06_15_195455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +31,21 @@ ActiveRecord::Schema.define(version: 2019_06_15_170716) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "booking_desk_tags", force: :cascade do |t|
+    t.bigint "booking_desk_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_desk_id"], name: "index_booking_desk_tags_on_booking_desk_id"
+    t.index ["tag_id"], name: "index_booking_desk_tags_on_tag_id"
+  end
+
   create_table "booking_desks", force: :cascade do |t|
     t.date "starts_at"
     t.date "ends_at"
     t.bigint "user_id"
     t.bigint "desk_id"
+    t.float "price", default: 95.0
     t.index ["desk_id"], name: "index_booking_desks_on_desk_id"
     t.index ["user_id"], name: "index_booking_desks_on_user_id"
   end
@@ -44,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_170716) do
     t.bigint "room_id"
     t.datetime "starts_at"
     t.datetime "ends_at"
+    t.float "price", default: 100.0
     t.index ["room_id"], name: "index_booking_rooms_on_room_id"
     t.index ["user_id"], name: "index_booking_rooms_on_user_id"
   end
@@ -61,6 +73,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_170716) do
     t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
+  
+  create_table "lunches", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.integer "proposer_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
@@ -74,6 +95,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_170716) do
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.float "weighting", default: 1.0
   end
 
   create_table "unavailability_desks", force: :cascade do |t|
@@ -106,12 +128,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_170716) do
     t.string "job"
     t.integer "balance", default: 100
     t.boolean "has_dog", default: false
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "area_tags", "areas"
   add_foreign_key "area_tags", "tags"
+  add_foreign_key "booking_desk_tags", "booking_desks"
+  add_foreign_key "booking_desk_tags", "tags"
   add_foreign_key "booking_desks", "desks"
   add_foreign_key "booking_desks", "users"
   add_foreign_key "booking_rooms", "rooms"

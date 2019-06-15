@@ -1,11 +1,36 @@
 <div class="container">
+  <h2 class="text-center">What would you like today?</h2>
   <div class="row">
     <div class="col-12">
-      <%= simple_form_for [ @desk, @booking_desk ] do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+      <%= simple_form_for @booking_desk do |f| %>
+
+        <fieldset class="form-group check_boxes required booking_desk_booking_desk_tags_tag">
+          <input type="hidden" name="booking_desk[booking_desk_tags][tag][]" value="">
+          <div class="booking-choices">
+            <% Tag.all.each do |tag| %>
+              <div class="booking-choice-container">
+                <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="booking_desk[booking_desk_tags][tag][]" id="booking_desk_booking_desk_tags_tag_<%= tag.id %>">
+                <label class="collection_check_boxes area-preference" for="booking_desk_booking_desk_tags_tag_<%= tag.id %>" data-weighting="2.5"><%= tag.description %></label>
+              </div>
+            <% end %>
+          </div>
+
+
+        </fieldset>
+        <%= f.input :price, as: :hidden %>
+        <button type="submit" id="price" name="commit" class="btn btn-primary w-100" data-disable-with="Finding the best desk">
+          Book a Desk <span style="font-weight: lighter;">(select at least one)</span>
+        </button>
+        <div class="text-center py-2">
+          <%= link_to "I don't have enough bucks, give me a random desk 😅", "#", id: "message", class: "d-none" %>
+        </div>
+
       <% end %>
+
+
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'checkboxes' %>
+

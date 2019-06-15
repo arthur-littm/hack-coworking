@@ -7,9 +7,6 @@
       <div class="user-info">
         <h3><%= @user.displayed_name %></h3>
         <p><%= @user.displayed_job %></p>
-        <% if my_profile %>
-          <p><i class="fas fa-coins"></i> <%= @user.balance %></p>
-        <% end %>
       </div>
     </div>
   </div>
@@ -27,10 +24,22 @@
     </div>
 
   </div>
+  <% if @user.booking_rooms.any? %>
+    <div class="user-section">
+      <p class="header">Your booked rooms</p>
+      <% @user.booking_rooms.each do |booking| %>
+        <div class="d-flex justify-content-between align-items-center my-2">
+          <p class="content"><strong><%= booking.room.name %></strong></p>
+          <span><%= booking.starts_at.strftime("%b #{booking.starts_at.day.ordinalize} %H:%M") %> until <%= booking.starts_at.strftime("%H:%M") %></span>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class="user-section">
     <p><i class="fas fa-calendar-week"></i> <%= link_to "Book a meeting room", "#" %></p>
-    <p class="m-0"><i class="fas fa-coins"></i> <%= link_to "Earn more bucks", new_event_path %></p>
+    <p><i class="fas fa-coins"></i> <%= link_to "Earn more bucks", new_event_path %></p>
+    <p class="m-0"><i class="fas fa-coins"></i> <%= link_to "Network at lunch?", "#" %></p>
 
   </div>
-
-
+  </div>
+</div>

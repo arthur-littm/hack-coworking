@@ -9,12 +9,9 @@ Rails.application.routes.draw do
 
   get 'users/:id', to: "users#show", as: :user_account
 
-  resources :desks do
-    resources :booking_desks, only: [ :new, :create ]
-  end
-  resources :booking_desks, only: [ :show, :destroy ]
-
-  # get "events"
-
   resources :events, only: [:new, :show, :create, :index]
+
+  resources :desks
+  resources :booking_desks, only: [ :show, :destroy, :new, :create, :edit, :update ]
+  resources :lunches, only: [ :create, :new, :show, :index ]
 end

@@ -2,6 +2,7 @@ require 'csv'
 
 UnavailabilityDesk.destroy_all
 UnavailabilityRoom.destroy_all
+BookingDeskTag.destroy_all
 BookingDesk.destroy_all
 BookingRoom.destroy_all
 AreaTag.destroy_all
@@ -46,9 +47,5 @@ Area.all.each do |area|
     AreaTag.create(tag: tag, area: area)
   end
 end
-
-
-
-
 
 

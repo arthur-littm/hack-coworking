@@ -9,11 +9,18 @@ $headings-font-family:    $headers-font;
 $body-bg:                 white;
 $font-size-base: 1rem;
 
-
+.disable {
+  opacity: .4;
+}
 // Colors
 .btn-primary {
   color: white !important;
 }
+
+.btn-gray {
+  background: $light-gray;
+}
+
 $link-color: #525252;
 $btn-padding-x: 48px;
 $btn-padding-y: 16px;

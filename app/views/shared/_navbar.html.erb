@@ -1,7 +1,7 @@
 <div class="navbar navbar-light navbar-lewagon <%= "navbar-green" if params[:controller] == "users" && params[:action] == "show" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     Snap Desk
-    <% end %>
+  <% end %>
   <div>
     <% if user_signed_in? %>
       <span class="balance"><%= current_user.current_balance %> <i class="fas fa-coins"></i></span>
@@ -25,7 +25,7 @@
           <%= link_to "My Account", user_account_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Book A Room", "#", class: "nav-link" %>
+          <%= link_to "Book A Room", rooms_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

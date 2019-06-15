@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for @booking_desk do |f| %>
+        <p>Would you like to sit next to a</p>
+        <div class="booking-choices">
+          <% @other_bookings.each do |booking| %>
+            <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= booking.id %>" name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= booking.id %>">
+            <label class="collection_check_boxes area-preference select-one"><%= booking.user.job %></label>
+          <% end %>
+        </div>
+        <hr>
+        <%= link_to 'I don\'t care who I sit next to', booking_desk_path(@booking_desk), class: 'btn btn-gray' %>
+        <hr>
+        <!-- TODO: update with price of booking %> -->
+        <%= f.button :submit, "Book a seat (100 SB)", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'checkboxes' %>
