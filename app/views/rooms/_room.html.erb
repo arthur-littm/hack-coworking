@@ -1,0 +1,8 @@
+<%= link_to new_room_booking_room_path(room) do %>
+  <div class="card-room">
+    Area <%= room.area.name %>
+    <br>
+    Room: <%= room.name %>
+    Capacity <%= room.capacity %>
+  </div>
+<% end %>

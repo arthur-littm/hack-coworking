@@ -1,0 +1,13 @@
+.rooms-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.card-room {
+  height: 150px;
+  padding: 8px;
+  background-image: url('https://images.pexels.com/photos/260689/pexels-photo-260689.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500');
+  background-size: cover;
+  border-radius: 8px;
+}
