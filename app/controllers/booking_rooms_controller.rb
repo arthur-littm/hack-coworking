@@ -23,7 +23,6 @@ class BookingRoomsController < ApplicationController
     end
   end
 
-
   private
 
   def set_room
