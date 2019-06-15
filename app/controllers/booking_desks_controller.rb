@@ -12,6 +12,11 @@ class BookingDesksController < ApplicationController
   end
 
   def edit
+    @other_bookings = BookingDesk.joins(:desk)
+                                .where("desks.area_id = #{@booking_desk.desk.area.id}")
+                                .where(starts_at: @booking_desk.starts_at)
+                                .where.not(user: current_user)
+    redirect_to booking_desk_path(@booking_desk) unless @other_bookings.any?
   end
 
   def update
