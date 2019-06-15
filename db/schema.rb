@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_093106) do
+ActiveRecord::Schema.define(version: 2019_06_15_095849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "area_tags", force: :cascade do |t|
+    t.bigint "area_id"
+    t.bigint "tag_id"
+    t.index ["area_id"], name: "index_area_tags_on_area_id"
+    t.index ["tag_id"], name: "index_area_tags_on_tag_id"
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.integer "desk_number"
+    t.integer "current_population"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "booking_rooms", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_booking_rooms_on_room_id"
+    t.index ["user_id"], name: "index_booking_rooms_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.bigint "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_rooms_on_area_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +59,13 @@ ActiveRecord::Schema.define(version: 2019_06_15_093106) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "job"
+    t.integer "balance"
+    t.boolean "has_dog", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rooms", "areas"
 end
