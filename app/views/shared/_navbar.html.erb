@@ -1,7 +1,7 @@
 <div class="navbar navbar-light navbar-lewagon <%= "navbar-green" if params[:controller] == "users" && params[:action] == "show" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     Snap Desk
-    <% end %>
+  <% end %>
   <div>
     <% if user_signed_in? %>
       <span class="balance"><%= current_user.current_balance %> <i class="fas fa-coins"></i></span>

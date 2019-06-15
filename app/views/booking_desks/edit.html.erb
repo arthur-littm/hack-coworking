@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= @booking_desk.tags.count %>
+      <%= simple_form_for @booking_desk do |f| %>
+        <p>TODO select people you want to sit next to</p>
+        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

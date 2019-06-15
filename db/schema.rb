@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_132239) do
+ActiveRecord::Schema.define(version: 2019_06_15_145232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_132239) do
     t.integer "current_population"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "booking_desk_tags", force: :cascade do |t|
+    t.bigint "booking_desk_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_desk_id"], name: "index_booking_desk_tags_on_booking_desk_id"
+    t.index ["tag_id"], name: "index_booking_desk_tags_on_tag_id"
   end
 
   create_table "booking_desks", force: :cascade do |t|
@@ -95,6 +104,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_132239) do
 
   add_foreign_key "area_tags", "areas"
   add_foreign_key "area_tags", "tags"
+  add_foreign_key "booking_desk_tags", "booking_desks"
+  add_foreign_key "booking_desk_tags", "tags"
   add_foreign_key "booking_desks", "desks"
   add_foreign_key "booking_desks", "users"
   add_foreign_key "booking_rooms", "rooms"
