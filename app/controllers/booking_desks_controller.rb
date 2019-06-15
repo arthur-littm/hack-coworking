@@ -1,9 +1,14 @@
 class BookingDesksController < ApplicationController
   before_action :set_desk, only: [ :new, :create ]
+  before_action :set_booking_desk, only: [ :show ]
+
+  def show
+
+  end
 
   def new
     @booking_desk = BookingDesk.new
-    @unavailabilities = @desk.unavailabilities
+    @unavailabilities = @desk.unavailability_desks
   end
 
   def create
@@ -11,7 +16,7 @@ class BookingDesksController < ApplicationController
     @booking_desk.user = current_user
     @booking_desk.desk = @desk
     if @booking_desk.save
-      UnavailabilityDesk.create(starts_at: @booking_desk.starts_at, ends_at: @booking_desk.ends_at)
+      UnavailabilityDesk.create(starts_at: @booking_desk.starts_at, ends_at: @booking_desk.ends_at, desk: @booking_desk.desk)
       redirect_to "/"
     else
       render :new, notice: "Oops, something went wrong"
@@ -19,6 +24,10 @@ class BookingDesksController < ApplicationController
   end
 
   private
+
+  def set_booking_desk
+    @booking_desk = BookingDesk.find(params[:id])
+  end
 
   def set_desk
     @desk = Desk.find(params[:desk_id].to_i)

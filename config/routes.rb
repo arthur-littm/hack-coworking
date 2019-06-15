@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :desks do
     resources :booking_desks, only: [ :new, :create ]
   end
+  resources :booking_desks, only: [ :show, :destroy ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
