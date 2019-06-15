@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <%= @booking_desk.tags.count %>
       <%= @booking_desk.desk.nil? ? "No desk" : "Desk" %>
       <%= simple_form_for @booking_desk do |f| %>
-        <p>TODO select people you want to sit next to</p>
+        <p>These are some of the other skillsets sitting in the same room as you - do you have a preference who you sit near?</p>
+        <% @other_bookings.each do |booking| %>
+          <p><%= booking.user.job %></p>
+        <% end %>
         <%= f.button :submit, "Go", class: "btn btn-primary" %>
       <% end %>
+      <%= link_to 'I don\'t care', booking_desk_path(@booking_desk) %>
     </div>
   </div>
 </div>
