@@ -17,7 +17,7 @@ class BookingDesksController < ApplicationController
     @booking_desk.desk = @desk
     if @booking_desk.save
       UnavailabilityDesk.create(starts_at: @booking_desk.starts_at, ends_at: @booking_desk.ends_at, desk: @booking_desk.desk)
-      redirect_to "/"
+      redirect_to booking_desk_path(@booking_desk)
     else
       render :new, notice: "Oops, something went wrong"
     end
