@@ -16,7 +16,7 @@ class BookingRoomsController < ApplicationController
     @booking_room.user = current_user
     @booking_room.room = @room
     if @booking_room.save
-      UnavailabilityRoom.create(starts_at: @booking_room.starts_at, ends_at: @booking_room.ends_at)
+      UnavailabilityRoom.create(starts_at: @booking_room.starts_at, ends_at: @booking_room.ends_at, room: @room)
       redirect_to booking_room_path(@booking_room)
     else
       render :new, notice: "Something went wrong"

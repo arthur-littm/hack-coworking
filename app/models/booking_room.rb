@@ -9,8 +9,8 @@ class BookingRoom < ActiveRecord::Base
 
   def room_available?
     is_valid = self.room.unavailability_rooms.select do |unavailability|
-      (self.starts_at > unavailability.starts_at && self.starts_at < unavailability.ends_at) || (self.ends_at > unavailability.starts_at && self.ends_at < unavailability.ends_at)
+      (self.starts_at - 1.second >= unavailability.starts_at && self.starts_at + 1.second <= unavailability.ends_at) || (self.ends_at + 1.second >= unavailability.starts_at && self.ends_at - 1.second <= unavailability.ends_at)
     end
-    errors.add(:booking_room, "Room is not available") unless is_valid.empty?
+    errors.add(:booking_room, "Room is not available") if is_valid.any?
   end
 end
