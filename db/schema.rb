@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_06_15_132239) do
 
   # These are extensions that must be enabled in order to support this database
@@ -69,15 +68,6 @@ ActiveRecord::Schema.define(version: 2019_06_15_132239) do
     t.string "description"
   end
 
-  create_table "unavailability_rooms", force: :cascade do |t|
-    t.datetime "starts_at"
-    t.datetime "ends_at"
-    t.bigint "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_unavailability_rooms_on_room_id"
-  end
-  
   create_table "unavailability_desks", force: :cascade do |t|
     t.date "starts_at"
     t.date "ends_at"
@@ -85,7 +75,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_132239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["desk_id"], name: "index_unavailability_desks_on_desk_id"
+  end
 
+  create_table "unavailability_rooms", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_unavailability_rooms_on_room_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,8 +109,6 @@ ActiveRecord::Schema.define(version: 2019_06_15_132239) do
   add_foreign_key "booking_rooms", "rooms"
   add_foreign_key "booking_rooms", "users"
   add_foreign_key "rooms", "areas"
-
-  add_foreign_key "unavailability_rooms", "rooms"
-
   add_foreign_key "unavailability_desks", "desks"
+  add_foreign_key "unavailability_rooms", "rooms"
 end
