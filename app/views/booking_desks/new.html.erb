@@ -6,7 +6,7 @@
           <input type="hidden" name="booking_desk_tags[tag][]" value="">
           <div class="booking-choices">
             <% Tag.all.each do |t| %>
-              <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= t.id %> " name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= t.id %> ">
+              <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= t.id %> " name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= t.id %>">
               <label class="collection_check_boxes booking-choice" for="booking_desk_tags_tag_<%= t.id %> "><%= t.name %></label>
               <!-- TODO Add the number of available desks in each -->
             <% end %>

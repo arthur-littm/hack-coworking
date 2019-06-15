@@ -1,4 +1,6 @@
 BookingDeskTag.destroy_all
+BookingDesk.destroy_all
+UnavailabilityDesk.destroy_all
 Tag.destroy_all
 Desk.destroy_all
 Area.destroy_all
@@ -16,6 +18,6 @@ Tag.create(name: "Near booth")
 
 area = Area.create!(name: "Creative Hub, Floor 1", desk_number: 5)
 10.times do |i|
-  Desk.create!(name: "Desk #{i}", area: area)
+  Desk.create!(name: "Desk #{i + 1}", area: area)
   p i
 end
