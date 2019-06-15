@@ -7,6 +7,9 @@
   <div class="user-section">
     <p class="header">Your desk</p>
     <p class="content"><%= @booking_desk.desk.area.name %>, <%= @booking_desk.desk.name %></p>
+    <% @booking_desk.desk.area.tags.each do |t| %>
+      <span class="badge badge-primary"><%= t.name %></span>
+    <% end %>
   </div>
 
   <div class="user-section">

@@ -1,18 +1,27 @@
 <div class="container">
+  <h2 class="text-center">What would you like today?</h2>
   <div class="row">
     <div class="col-12">
       <%= simple_form_for @booking_desk do |f| %>
-        <fieldset class="form-group check_boxes required booking_desk_tags_tag">
-          <input type="hidden" name="booking_desk_tags[tag][]" value="">
+
+        <fieldset class="form-group check_boxes required booking_desk_booking_desk_tags_tag">
+          <input type="hidden" name="booking_desk[booking_desk_tags][tag][]" value="">
           <div class="booking-choices">
-            <% Tag.all.each do |t| %>
-              <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= t.id %> " name="booking_desk_tags[tag][]" id="booking_desk_tags_tag_<%= t.id %>">
-              <label class="collection_check_boxes booking-choice" for="booking_desk_tags_tag_<%= t.id %> "><%= t.name %></label>
-              <!-- TODO Add the number of available desks in each -->
+            <% Tag.all.each do |tag| %>
+              <div class="form-check booking-choice-container">
+                <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="booking_desk[booking_desk_tags][tag][]" id="booking_desk_booking_desk_tags_tag_<%= tag.id %>">
+                <label class="collection_check_boxes area-preference" for="booking_desk_booking_desk_tags_tag_<%= tag.id %>" data-weighting="2.5"><%= tag.description %></label>
+              </div>
             <% end %>
           </div>
+
+
         </fieldset>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+        <%= f.input :price, as: :hidden %>
+        <button type="submit" id="price" name="commit" class="btn btn-primary w-100" data-disable-with="Finding the best desk">
+          <i class="fas fa-coins"></i> <%= @booking_desk.price %>
+        </button>
+
       <% end %>
 
 
