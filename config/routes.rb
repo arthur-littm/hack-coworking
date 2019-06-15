@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :booking_rooms, only: [ :show, :destroy ]
 
   get 'users/:id', to: "users#show", as: :user_account
+
+  resources :events, only: [:new, :show, :create, :index]
+
   resources :desks
   resources :booking_desks, only: [ :show, :destroy, :new, :create, :edit, :update ]
   resources :lunches, only: [ :create, :new, :show, :index ]
