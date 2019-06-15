@@ -1,5 +1,9 @@
 require 'csv'
 
+UnavailabilityDesk.destroy_all
+UnavailabilityRoom.destroy_all
+BookingDesk.destroy_all
+BookingRoom.destroy_all
 AreaTag.destroy_all
 Tag.destroy_all
 Desk.destroy_all
