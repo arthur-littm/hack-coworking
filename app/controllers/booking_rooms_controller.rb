@@ -1,5 +1,10 @@
 class BookingRoomsController < ApplicationController
-  before_action :set_room, only: [ :create ]
+  before_action :set_room, only: [ :create, :new ]
+
+  def new
+    # @room = Room.find(params[:room_id])
+    @booking_room = BookingRoom.new
+  end
 
   def create
     @booking_room = BookingRoom.new(booking_params)
@@ -16,7 +21,7 @@ class BookingRoomsController < ApplicationController
   private
 
   def set_room
-    @room = params[:room_id]
+    @room = Room.find(params[:room_id])
   end
 
   def booking_params
