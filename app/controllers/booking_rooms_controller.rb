@@ -4,7 +4,7 @@ class BookingRoomsController < ApplicationController
   def new
     # @room = Room.find(params[:room_id])
     @booking_room = BookingRoom.new
-    @unavailabilities = @room.unavailabilities
+    @unavailabilities = @room.unavailability_rooms
   end
 
   def create
