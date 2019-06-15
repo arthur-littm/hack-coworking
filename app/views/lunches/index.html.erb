@@ -1,0 +1,12 @@
+<div class="container py-4">
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-12">
+        <div class="lunch-card">
+          <%= user.email %>
+          <%= user.job %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
