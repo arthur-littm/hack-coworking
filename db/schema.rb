@@ -86,6 +86,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_145232) do
     t.index ["desk_id"], name: "index_unavailability_desks_on_desk_id"
   end
 
+  create_table "unavailability_rooms", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_unavailability_rooms_on_room_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -112,4 +121,5 @@ ActiveRecord::Schema.define(version: 2019_06_15_145232) do
   add_foreign_key "booking_rooms", "users"
   add_foreign_key "rooms", "areas"
   add_foreign_key "unavailability_desks", "desks"
+  add_foreign_key "unavailability_rooms", "rooms"
 end

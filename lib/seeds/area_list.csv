@@ -1,0 +1,193 @@
+AreaLabel,SpaceTypeCategoryCode,SpaceTypeCategoryName,SpaceTypeName,Capacity
+FR01,FR,Focus room,Focus room - solo,1
+FR02,FR,Focus room,Focus room - solo,1
+FR03,FR,Focus room,Focus room - solo,1
+FR04,FR,Focus room,Focus room - solo,1
+FR05,FR,Focus room,Focus room - solo,1
+Closed office 1,office,Office,Closed office - private,1
+Baby room,CA,Common area,Family-support,1
+FR05,FR,Focus room,Focus room - solo,1
+FR06,FR,Focus room,Focus room - solo,1
+FR07,FR,Focus room,Focus room - solo,1
+FR08,FR,Focus room,Focus room - solo,1
+FR09,FR,Focus room,Focus room - solo,1
+Nap room,CA,Common area,Relax space,1
+Shower in massage room 1,CA,Common area,Shower,1
+Shower in massage room 2,CA,Common area,Shower,1
+Shower,CA,Common area,Shower,1
+FR13,FR,Focus room,Focus room - solo,1
+FR14,FR,Focus room,Focus room - solo,1
+Phone Booth 1,PB,Phone Booth,Phone Booth,1
+Phone Booth 2,PB,Phone Booth,Phone Booth,1
+FR15,FR,Focus room,Focus room - solo,1
+FR16,FR,Focus room,Focus room - solo,1
+FR17,FR,Focus room,Focus room - solo,1
+FR18,FR,Focus room,Focus room - solo,1
+FR01,FR,Focus room,Focus room - solo,1
+FR02,FR,Focus room,Focus room - solo,1
+FR03,FR,Focus room,Focus room - solo,1
+FR04,FR,Focus room,Focus room - solo,1
+QR3,QR,Quiet room,Quiet room,2
+QR2,QR,Quiet room,Quiet room,2
+QR1,QR,Quiet room,Quiet room,2
+MR05,MR,Meeting room,Meeting room - closed,2
+MR02,MR,Meeting room,Meeting room - closed,2
+MR-G,MR,Meeting room,Meeting room - closed,2
+FR10,FR,Focus room,Focus room for two,2
+Massage room 1,CA,Common area,Massage room,2
+Massage room 2,CA,Common area,Massage room,2
+FR11,FR,Focus room,Focus room for two,2
+FR12,FR,Focus room,Focus room for two,2
+Secret Room,MR,Meeting room,Meeting room - closed,2
+Closed office 10,office,Office,Closed office - shared,2
+Closed office 11,office,Office,Closed office - shared,2
+Semi-open office 5 - Island 5,office,Office,Semi-open office,2
+Open office by Pis,office,Office,Open office,2
+FR19,FR,Focus room,Focus room - solo,2
+MR21,MR,Meeting room,Meeting room - closed,2
+MR22,MR,Meeting room,Meeting room - closed,2
+MR23,MR,Meeting room,Meeting room - closed,2
+MR24,MR,Meeting room,Meeting room - closed,2
+MR25,MR,Meeting room,Meeting room - closed,2
+Closed office 2,office,Office,Closed office - shared,3
+MR11,MR,Meeting room,Meeting room - closed,3
+MR12,MR,Meeting room,Meeting room - closed,3
+MR13,MR,Meeting room,Meeting room - closed,3
+MR14,MR,Meeting room,Meeting room - closed,3
+Semi-open office 5 - Island 1,office,Office,Semi-open office,3
+Semi-open office 5 - Island 3,office,Office,Semi-open office,3
+Open office 4 - SK leaders,office,Office,Open office,3
+Closed office 12,office,Office,Closed office - private,3
+Closed office 13,office,Office,Closed office - private,3
+OMR01,MR,Meeting room,Meeting room - open,4
+OMR04,MR,Meeting room,Meeting room - open,4
+OMR03,MR,Meeting room,Meeting room - open,4
+MR-F,MR,Meeting room,Meeting room - closed,4
+MR-E,MR,Meeting room,Meeting room - closed,4
+Semi-open office 1 - Island 1,office,Office,Semi-open office,4
+Semi-open office 1 - Island 2,office,Office,Semi-open office,4
+Semi-open office 1 - Island 3,office,Office,Semi-open office,4
+Semi-open office 1 - Island 4,office,Office,Semi-open office,4
+Closed office 9,office,Office,Closed office - shared,4
+Semi-open office 5 - Island 4,office,Office,Semi-open office,4
+Collaboration space SK,MR,Meeting room,Meeting room - open,4
+Open office 6 - Island 3,office,Office,Open office,4
+Meeting are in HR,MR,Meeting room,Meeting room - open,4
+Meeting alcove in Finance,MR,Meeting room,Meeting room - open,4
+Meeting alcove 1,MR,Meeting room,Meeting room - open,4
+Meeting alcove 2,MR,Meeting room,Meeting room - open,4
+Meeting alcove 3,MR,Meeting room,Meeting room - open,4
+Meeting alcove 4,MR,Meeting room,Meeting room - open,4
+empty,office,Office,Closed office - shared,5
+PowerX,office,Office,Closed office - shared,5
+26 house,office,Office,Closed office - shared,5
+Sklad,SA,Support area,Storage,5
+Fuergy 1,office,Office,Closed office - shared,5
+MR03,MR,Meeting room,Meeting room - closed,5
+Semi-open office 4,office,Office,Semi-open office,5
+MR06,MR,Meeting room,Meeting room - closed,5
+MR07,MR,Meeting room,Meeting room - closed,5
+MR08,MR,Meeting room,Meeting room - closed,5
+Open office 7 - Island 3,office,Office,Open office,5
+TTB meeting room,MR,Meeting room,Meeting room - closed,6
+TTB showroom,office,Office,Closed office - shared,6
+MR04,MR,Meeting room,Meeting room - closed,6
+Fuergy 2,office,Office,Closed office - shared,6
+On Semicondructor,office,Office,Closed office - shared,6
+MR04,MR,Meeting room,Meeting room - closed,6
+MR-D1,MR,Meeting room,Meeting room - closed,6
+MR-D2,MR,Meeting room,Meeting room - closed,6
+MR-C2,MR,Meeting room,Meeting room - closed,6
+MR-C1,MR,Meeting room,Meeting room - closed,6
+MR-B,MR,Meeting room,Meeting room - closed,6
+MR-A,MR,Meeting room,Meeting room - closed,6
+Closed office 3,office,Office,Closed office - shared,6
+Closed office 4,office,Office,Closed office - shared,6
+Closed office 5,office,Office,Closed office - shared,6
+Closed office 6,office,Office,Closed office - shared,6
+Closed office 7,office,Office,Closed office - shared,6
+Closed office 8,office,Office,Closed office - shared,6
+Open office 1 - Island 1,office,Office,Open office,6
+Open office 1 - Island 2,office,Office,Open office,6
+Open office 1 - Island 3,office,Office,Open office,6
+Open office 1 - Island 4,office,Office,Open office,6
+Open office 2 - Island 1,office,Office,Open office,6
+Open office 2 - Island 2,office,Office,Open office,6
+Open office 2 - Island 4,office,Office,Open office,6
+Semi-open office 5 - Island 2,office,Office,Semi-open office,6
+Music room,CA,Common area,Music room,6
+Open office 3 - Island 3,office,Office,Open office,6
+MR19,MR,Meeting room,Meeting room - closed,6
+Open office 5 - Island 1,office,Office,Open office,6
+Open office 5 - Island 4,office,Office,Open office,6
+Meeting peninsula by PIs,MR,Meeting room,Meeting room - open,6
+Open office 6 - Island 1,office,Office,Open office,6
+Open office 6 - Island 4,office,Office,Open office,6
+Admin staff,CA,Common area,Reception,6
+Open office 8 - Island 1,office,Office,Open office,6
+Open office 8 - Island 2,office,Office,Open office,6
+Alistiq,office,Office,Closed office - shared,7
+empty,office,Office,Closed office - shared,7
+empty,office,Office,Closed office - shared,7
+MR16,MR,Meeting room,Meeting room - closed,7
+MR18,MR,Meeting room,Meeting room - closed,7
+MR20,MR,Meeting room,Meeting room - closed,7
+Open office 7 - Island 4,office,Office,Open office,7
+MR09,MR,Meeting room,Meeting room - closed,7
+On Semicondructor,office,Office,Closed office - shared,8
+On Semicondructor,office,Office,Closed office - shared,8
+Twin Capital,office,Office,Closed office - shared,8
+MR02,MR,Meeting room,Meeting room - closed,8
+MR03,MR,Meeting room,Meeting room - closed,8
+MR05,MR,Meeting room,Meeting room - closed,8
+MR-H,MR,Meeting room,Meeting room - closed,8
+Breakout,CA,Common area,Breakout,8
+Semi-open office 2,office,Office,Semi-open office,8
+Open office 2 - Island 3,office,Office,Open office,8
+Open office 3 - Island 1,office,Office,Open office,8
+Open office 3 - Island 2,office,Office,Open office,8
+Open office 3 - Island 4,office,Office,Open office,8
+Open office 5 - Island 2,office,Office,Open office,8
+Open office 5 - Island 3,office,Office,Open office,8
+Open office 6 - Island 2,office,Office,Open office,8
+Open office 6 - Island 5,office,Office,Open office,8
+Open office 7 - Island 1,office,Office,Open office,8
+Open office 7 - Island 2,office,Office,Open office,8
+Open office 7 - Island 5,office,Office,Open office,8
+Open office 7 - Island 6,office,Office,Open office,8
+Collaboration space HQ,MR,Meeting room,Meeting room - open,8
+MR10,MR,Meeting room,Meeting room - closed,8
+Open office 8 - Island 3,office,Office,Open office,8
+Open office 8 - Island 4,office,Office,Open office,8
+Open office 8 - Island 5,office,Office,Open office,8
+Open office 8 - Island 6,office,Office,Open office,8
+BridgeWaterBlu,office,Office,Closed office - shared,9
+HubHub Slovakia ,office,Office,Closed office - shared,9
+Relax Room,CA,Common area,Relax space,9
+MR01,MR,Meeting room,Meeting room - closed,9
+TTB office,office,Office,Closed office - shared,10
+TTB showroom appendix,office,Office,Closed office - shared,10
+Welcome zone,CA,Common area,Reception,10
+Play room,CA,Common area,Family-support,10
+Relax room,CA,Common area,Relax space,10
+Academy fixed desks 2,office,Office,Open office,12
+Semi-open office 3,office,Office,Semi-open office,12
+Lounge 3np,CA,Common area,Lounge,12
+Brackets by Triad,office,Office,Closed office - shared,13
+SimpleCell,office,Office,Closed office - shared,13
+MR01,MR,Meeting room,Meeting room - closed,14
+Lab,office,Office,Closed office - shared,14
+Breakout - showcase,CA,Common area,Breakout,15
+Academy fixed desks 1,office,Office,Open office,16
+Podium,CA,Common area,Lounge,16
+Library,FR,Focus room,Library,18
+Academy shared desks,office,Office,Open office,19
+Kitchen,CA,Common area,Kitchen,20
+Bar,CA,Common area,Bar,20
+Lounge 2np,CA,Common area,Lounge,24
+Dining area,CA,Common area,Dining area,30
+Dining area,CA,Common area,Dining area,33
+Project Islands,office,Office,Open office,35
+Value creation space 1,MR,Meeting room,Meeting room - open,40
+Value creation space 2,MR,Meeting room,Meeting room - open,40
+Academy space,office,Office,Open office,47
