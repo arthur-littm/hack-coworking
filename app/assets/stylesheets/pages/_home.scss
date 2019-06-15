@@ -14,7 +14,16 @@
   }
 }
 
-.navbar button:focus {
-  outline: none;
-  border: 1px solid $primary;
+.footer {
+  width: 100%;
+  text-align: left;
+  display: block;
+  opacity: .6;
+  font-size: 10px;
+  strong {
+    color: $primary;
+  }
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
 }

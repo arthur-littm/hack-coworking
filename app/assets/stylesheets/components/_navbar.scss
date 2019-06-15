@@ -3,10 +3,27 @@
   background: white;
 }
 
+.navbar-green {
+  background: $primary;
+  color: white;
+  .navbar-brand {
+    color: white;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar button:focus {
+  outline: none;
+  border: 1px solid $primary;
+}
+
+.balance {
+  margin-right: 16px;
 }
