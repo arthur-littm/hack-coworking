@@ -8,7 +8,7 @@
           <input type="hidden" name="booking_desk[booking_desk_tags][tag][]" value="">
           <div class="booking-choices">
             <% Tag.all.each do |tag| %>
-              <div class="form-check booking-choice-container">
+              <div class="booking-choice-container">
                 <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="booking_desk[booking_desk_tags][tag][]" id="booking_desk_booking_desk_tags_tag_<%= tag.id %>">
                 <label class="collection_check_boxes area-preference" for="booking_desk_booking_desk_tags_tag_<%= tag.id %>" data-weighting="2.5"><%= tag.description %></label>
               </div>
@@ -19,8 +19,11 @@
         </fieldset>
         <%= f.input :price, as: :hidden %>
         <button type="submit" id="price" name="commit" class="btn btn-primary w-100" data-disable-with="Finding the best desk">
-          <i class="fas fa-coins"></i> <%= @booking_desk.price %>
+          Book a Desk <span style="font-weight: lighter;">(select at least one)</span>
         </button>
+        <div class="text-center py-2">
+          <%= link_to "I don't have enough bucks, give me a random desk 😅", "#", id: "message", class: "d-none" %>
+        </div>
 
       <% end %>
 
