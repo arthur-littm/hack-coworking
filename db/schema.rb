@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_110940) do
+ActiveRecord::Schema.define(version: 2019_06_15_130254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_110940) do
     t.string "description"
   end
 
+  create_table "unavailability_desks", force: :cascade do |t|
+    t.date "starts_at"
+    t.date "ends_at"
+    t.bigint "desk_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["desk_id"], name: "index_unavailability_desks_on_desk_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -93,4 +102,5 @@ ActiveRecord::Schema.define(version: 2019_06_15_110940) do
   add_foreign_key "booking_rooms", "rooms"
   add_foreign_key "booking_rooms", "users"
   add_foreign_key "rooms", "areas"
+  add_foreign_key "unavailability_desks", "desks"
 end
