@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_165912) do
+ActiveRecord::Schema.define(version: 2019_06_15_163922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_165912) do
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.float "weighting", default: 1.0
   end
 
   create_table "unavailability_desks", force: :cascade do |t|
