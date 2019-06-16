@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :desks
   resources :booking_desks, only: [ :show, :destroy, :new, :create, :edit, :update ]
   resources :lunches, only: [ :create, :new, :show, :index ]
+
+  get :admin, to: "users#admin", as: :admin
 end
