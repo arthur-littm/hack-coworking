@@ -23,8 +23,8 @@
   margin-bottom: 10px;
   transition: 0.3s;
   display: flex;
-  align-items: flex-start;
-  flex: 0 0 48%;
+  align-items: center;
+  flex: 0 0 100%;
 }
 
 .avatar {
@@ -37,6 +37,7 @@
 }
 
 .user-infos {
+  flex-grow: 0;
   padding-left: 16px;
 }
 
