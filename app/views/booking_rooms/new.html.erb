@@ -8,12 +8,12 @@
     <div class="col-12 my-3">
       <p>Please select a time for your booking</p>
       <%= simple_form_for [@room, @booking_room] do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker col-3"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker col-3"} %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker col-12 col-lg-3"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker col-12 col-lg-3"} %>
         <% if user_can_afford_room?(current_user) %>
-          <%= f.button :submit, "Book for 100 SB", class: "btn btn-primary col-3" %>
+          <%= f.button :submit, "Book for 100 SB", class: "btn btn-primary col-12 col-lg-3" %>
         <% else %>
-          <%= f.button :submit, "Book for 100 SB", class: "btn btn-primary col-3", disabled: true %>
+          <%= f.button :submit, "Book for 100 SB", class: "btn btn-primary col-12 col-lg-3", disabled: true %>
          <p class="my-3">Please add more credits to book this room</p>
         <% end %>
       <% end %>
