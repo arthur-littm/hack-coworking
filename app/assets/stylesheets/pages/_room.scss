@@ -1,0 +1,54 @@
+.rooms-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.card-room {
+  height: 160px;
+  padding: 8px;
+  background-size: cover;
+  border-radius: 8px;
+  position: relative;
+  &:hover {
+    .book-button {
+      opacity: 1;
+    }
+  }
+}
+
+.card-room-content {
+  background: $light-gray;
+  padding: 4px;
+  margin: 8px;
+  font-size: 14px;
+  width: 60%
+}
+
+.book-button {
+  background-color: $green;
+  padding: 8px;
+  color: $white;
+  font-size: 12px;
+  width: 30%;
+  border-radius: 4px;
+  position: absolute;
+  text-align: center;
+  bottom: 4px;
+  right: 4px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 480px) {
+  .book-button {
+    opacity: 1;
+  }
+  .rooms-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
