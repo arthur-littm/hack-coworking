@@ -1,3 +1,4 @@
+require 'faker'
 require 'csv'
 
 UnavailabilityDesk.destroy_all
@@ -50,7 +51,7 @@ Area.all.each do |area|
 end
 
 names = %w(Alex Ben Arthur Angele Jonny)
-jobs = ["Fullstack Developer", "Backend Developer", "Frontend Developer", "Project Manager", "Fullstack Developer"]
+jobs = ["Fullstack Developer", "Backend Developer", "Frontend Developer", "Product Manager", "Fullstack Developer"]
 password = "123456"
 photos = %w(https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gu4bk6upus7v3u1wino8.jpg
  https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ixr9unj1pvqtkfbzvlcu.jpg
@@ -58,10 +59,25 @@ photos = %w(https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_
  https://avatars3.githubusercontent.com/u/26596127?v=4
  https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/pmgbbo7z4bel8x732lsz.jpg)
 
+Area.all.each do |area|
+  taken = (0..(area.desk_number - (0..6).to_a.sample)).to_a.sample
+  next if taken.nil?
+  taken.times do
+    user = User.create!(name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
+      job: Faker::Job.title, email: Faker::Internet.email, password: "123456",
+      photo: Faker::Avatar.image("my-own-slug"))
+    p user
+  end
+end
+
+User.all.sample((User.count / 1.5).to_i).each do |user|
+  booking = BookingDesk.create(desk: (Area.all - [Area.first]).sample.desks.sample, user: user, starts_at: Date.today, ends_at: Date.today)
+  p booking
+end
 
 5.times do |e|
 
-  user = User.create!(name: names[e], job: jobs[e], password: password, email: "#{names[e].downcase}@gmail.com", photo: photos[e])
+  user = User.create!(name: names[e], job: jobs[e], password: password, email: "#{names[e].downcase}@gmail.com", photo: photos[e], balance: 241)
   BookingDesk.create(desk: Area.first.desks.sample, user: user, starts_at: Date.today, ends_at: Date.today)
 
   (user.name == "Jonny" ? 1 : [0, 1].sample).times do
@@ -75,8 +91,6 @@ photos = %w(https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_
   p user
 
 end
-
-
 
 
 
