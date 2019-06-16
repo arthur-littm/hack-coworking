@@ -1,0 +1,59 @@
+<div class="container">
+  <h1>Users</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Job</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% User.all.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.job %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h1>Areas</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Desk number</th>
+        <th scope="col">Current population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Area.all.each do |area| %>
+        <tr>
+          <td><%= area.name %></td>
+          <td><%= area.desk_number %></td>
+          <td><%= area.current_population %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <h1>Desks</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Area</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Desk.all.each do |desk| %>
+        <tr>
+          <td><%= desk.name %></td>
+          <td><%= desk.area.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+

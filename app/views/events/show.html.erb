@@ -1,0 +1,10 @@
+<div class="event-banner">
+  <div class="event-box">
+    <p><i class="far fa-calendar-alt icon-color"></i> <strong><%= @event.name %></strong></p>
+    <p><%= @event.starts_at %></p>
+    <p class="content">Organised by <strong><%= @event.user.displayed_name %></strong></p>
+    <p class="content event-description"><%= @event.description %></p>
+  </div>
+</div>
+<div class="btn-event"><%= link_to "Attend", user_account_path(current_user), class: "btn btn-primary" %></div>
+

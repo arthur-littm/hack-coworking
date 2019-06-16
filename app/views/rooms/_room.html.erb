@@ -1,0 +1,12 @@
+<%= link_to new_room_booking_room_path(room) do %>
+  <div class="card-room" style="background-image: url('<%= generate_room_background %>')">
+    <div class="card-room-content">
+      <span><strong><%= room.name %></strong></span>
+      <br>
+      <span><%= room.capacity %> seats</span>
+    </div>
+    <div class="book-button">
+      <span>Book</span>
+    </div>
+  </div>
+<% end %>

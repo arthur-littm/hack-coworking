@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_212047) do
+ActiveRecord::Schema.define(version: 2019_06_16_072012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_212047) do
     t.string "name"
     t.bigint "area_id"
     t.index ["area_id"], name: "index_desks_on_area_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "starts_at"
+    t.date "ends_at"
+    t.bigint "user_id"
+    t.string "description"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "lunches", force: :cascade do |t|
@@ -121,6 +130,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_212047) do
     t.integer "balance", default: 100
     t.boolean "has_dog", default: false
     t.string "photo"
+    t.string "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -133,6 +143,7 @@ ActiveRecord::Schema.define(version: 2019_06_15_212047) do
   add_foreign_key "booking_desks", "users"
   add_foreign_key "booking_rooms", "rooms"
   add_foreign_key "booking_rooms", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "rooms", "areas"
   add_foreign_key "unavailability_desks", "desks"
   add_foreign_key "unavailability_rooms", "rooms"

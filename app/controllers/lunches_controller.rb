@@ -1,5 +1,5 @@
 class LunchesController < ApplicationController
-  before_action :set_lunch
+  before_action :set_lunch, only: [ :accept, :decline ]
   def create
     @lunch = Lunch.new
     @lunch.proposer = current_user
