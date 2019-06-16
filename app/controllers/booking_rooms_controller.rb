@@ -21,8 +21,7 @@ class BookingRoomsController < ApplicationController
     current_user.save
     @booking_room.room = @room
 
-
-    if @booking_room.save
+    if current_user.charge_snap_bucks(100) && @booking_room.save
       UnavailabilityRoom.create(starts_at: @booking_room.starts_at, ends_at: @booking_room.ends_at, room: @room)
       redirect_to booking_room_path(@booking_room)
     else
