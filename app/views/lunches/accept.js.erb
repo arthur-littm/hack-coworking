@@ -1,0 +1,7 @@
+Array.from(document.querySelectorAll(".lunch")).forEach((el) => {
+  el.remove();
+});
+document.getElementById("lunch-title").innerText = "Your lunch today";
+const parent = document.getElementById("lunch-title").parentElement;
+paragraph = `<p style="margin-bottom: 0px;">Have a nice lunch with <%= @lunch.proposer.name %>!</p>`;
+parent.insertAdjacentHTML("beforeend", paragraph);

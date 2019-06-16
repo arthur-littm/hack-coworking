@@ -3,7 +3,7 @@
       <div class="col-12 text-center">
         <h1 class="lunch-title">Want to grab lunch with someone new today?</h1>
         <% @users.each do |user| %>
-          <div class="lunch-card">
+          <div class="lunch-card" id="<%= user.id %>">
             <div class="short-bio">
               <img class="avatar" src="<%= user.photo? ? 'user.photo' : 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/51920747_10157127848197700_564219631653355520_n.jpg?_nc_cat=107&_nc_ht=scontent-lhr3-1.xx&oh=968e620ea92e28bc0195e1506991d0f4&oe=5D8B7BD6' %>" alt="">
               <div class="user-infos">
@@ -15,7 +15,7 @@
             </div>
           </div>
         <% end %>
-        <%= link_to "Request Lunch", "#", class: "btn btn-primary"%>
+        <%= link_to "Request Lunch", lunches_path(receiver_id: ""), method: :post, class: "btn btn-primary", id: "request" %>
       </div>
   </div>
 </div>

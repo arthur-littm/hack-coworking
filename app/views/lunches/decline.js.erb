@@ -1,0 +1,5 @@
+Array.from(document.getElementById("lunch_<%= @lunch.id %>").childNodes).forEach((node) => {
+  node.remove();
+})
+text = `<p style="margin-bottom: 0px;">We will notify <%= @lunch.proposer.name %></p>`;
+document.getElementById("lunch_<%= @lunch.id %>").insertAdjacentHTML("afterbegin", text);
