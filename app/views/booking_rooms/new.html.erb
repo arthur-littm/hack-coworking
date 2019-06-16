@@ -1,10 +1,16 @@
+<div class="booking-banner" style="background-image: url(/assets/desk-2a031f9c80719b502d84ee9bc04f7fb0a8c96227e361b65aabb0eaf67c85817c.jpg)">
+  <div class="container py-4">
+    <h4>Booking <%= @room.name %></h4>
+  </div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 my-3">
+      <p>Please select a time for your booking</p>
       <%= simple_form_for [@room, @booking_room] do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker col-3"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker col-3"} %>
+        <%= f.button :submit, "Book for 100 SB", class: "btn btn-primary col-3" %>
       <% end %>
     </div>
   </div>
