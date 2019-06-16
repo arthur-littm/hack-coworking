@@ -1,8 +1,13 @@
 <div class="container">
+  <div class="text-center">
+    <h2>Host events</h2>
+    <p>You can earn <i class="fas fa-coins"></i> by hosting events for the rest of the coworking.</p>
+  </div>
   <div class="row">
     <div class="col-12">
       <%= simple_form_for [@event] do |f| %>
       <%= f.input :name %>
+      <%= f.input :description %>
         <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.button :submit, "Go", class: "btn btn-primary" %>
