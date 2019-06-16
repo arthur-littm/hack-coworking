@@ -1,20 +1,22 @@
 <div class="container py-4">
   <div class="row">
-      <div class="col-12 text-center">
-        <h1 class="lunch-title">Want to grab lunch with someone new today?</h1>
-        <% @users.each do |user| %>
-          <div class="lunch-card">
-            <div class="short-bio">
-              <img class="avatar" src="<%= user.photo? ? 'user.photo' : 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/51920747_10157127848197700_564219631653355520_n.jpg?_nc_cat=107&_nc_ht=scontent-lhr3-1.xx&oh=968e620ea92e28bc0195e1506991d0f4&oe=5D8B7BD6' %>" alt="">
-              <div class="user-infos">
-                <%= user.email %>
+      <div class="col-12">
+        <h2 class="lunch-title text-center">Want to grab lunch with someone new today!</h2>
+          <div class="d-flex">
+            <% @users.each do |user| %>
+              <div class="lunch-card">
+                <% if user.photo %>
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+                <% else %>
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+                <% end %>
+                <div class="user-infos">
+                  <p><%= user.name %></p>
+                  <span><strong><%= user.job %></strong>, sitting in the <strong><%= user.booking_desks.last.desk.area.name %></strong></span>
+                </div>
               </div>
-            </div>
-            <div class="long-bio">
-              <%= user.name %> is a <%= user.job %> and is sitting at <%= user.booking_desks.first.desk.name %>
-            </div>
+            <% end %>
           </div>
-        <% end %>
         <%= link_to "Request Lunch", "#", class: "btn btn-primary"%>
       </div>
   </div>
