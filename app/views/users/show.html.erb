@@ -25,8 +25,13 @@
   <div class="user-section">
     <p class="header">My desk today</p>
     <div class="d-flex justify-content-between align-items-center my-2">
-      <p class="content">Creative Hub, Floor 1, Desk</p>
-      <%= link_to "Get Directions", "#", class: "btn btn-primary btn-sm"  %>
+      <% if @user.booking_desks.any? %>
+          <p class="content"><%= @user.booking_desks.last.desk.area.name %>, <%= @user.booking_desks.last.desk.name %></p>
+          <%= link_to "Get Directions", "#", class: "btn btn-primary btn-sm"  %>
+      <% else %>
+          <p class="content">No desk yet for today 😱</p>
+          <%= link_to "Book a Desk", new_booking_desk_path, class: "btn btn-primary btn-sm"  %>
+      <% end %>
     </div>
 
   </div>
