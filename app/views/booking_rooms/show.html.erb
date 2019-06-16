@@ -14,7 +14,7 @@
 
   <div class="user-section">
     <p class="header"><%= @booking_room.starts_at.strftime("#{@booking_room.starts_at.day.ordinalize} of %B, %Y") %></p>
-    <p class="content">09:00 - 19:00</p>
+    <p class="content"><%= @booking_room.starts_at.strftime("%H:%M") %> - <%= @booking_room.ends_at.strftime("%H:%M") %></p>
   </div>
 
   <div class="user-section">
