@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_072012) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
   end
 
   create_table "rooms", force: :cascade do |t|

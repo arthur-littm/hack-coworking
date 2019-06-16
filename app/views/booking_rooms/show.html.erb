@@ -7,25 +7,17 @@
   <div class="user-section">
     <p class="header">Your meeting room</p>
     <p class="content"><%= @booking_room.room.area.name %>, <%= @booking_room.room.name %></p>
-    <% @booking_room.room.area.tags.each do |t| %>
-      <span class="badge badge-primary"><%= t.name %></span>
-    <% end %>
+    <span class="badge badge-primary"><%= @booking_room.room.capacity %> seats</span>
   </div>
 
   <div class="user-section">
     <p class="header"><%= @booking_room.starts_at.strftime("#{@booking_room.starts_at.day.ordinalize} of %B, %Y") %></p>
-    <p class="content">09:00 - 19:00</p>
+    <p class="content"><%= @booking_room.starts_at.strftime("%H:%M") %> - <%= @booking_room.ends_at.strftime("%H:%M") %></p>
   </div>
 
   <div class="user-section">
-    <p class="header"><i class="fas fa-coins"></i> 120</p>
+    <p class="header"><i class="fas fa-coins"></i> <%= @booking_room.price.to_i %></p>
     <p class="content">Your balance is now of <%= current_user.current_balance %> <i class="fas fa-coins"></i></p>
-  </div>
-
-  <div class="user-section">
-    <p class="header">About the area</p>
-    <p class="content">30 people work in the same industry</p>
-    <p class="content">10 designers</p>
   </div>
 
   <%= link_to "Done", user_account_path(current_user), class: "btn btn-primary mb-5 w-100" %>

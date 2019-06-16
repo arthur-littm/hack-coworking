@@ -7,5 +7,9 @@ cards.forEach((card) => {
       }
     })
     e.currentTarget.classList.toggle("active-card");
+    let href = document.getElementById("request").href.split("=");
+    href.pop();
+    href.push(`=${e.currentTarget.id}`)
+    document.getElementById("request").href = href.join("")
   })
 })

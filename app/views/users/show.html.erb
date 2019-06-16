@@ -4,7 +4,7 @@
   <div class="container">
     <div class="d-flex">
       <% if @user.photo.present? %>
-        <%= image_tag @user.photo, class: "user-img" %>
+        <img src="<%= @user.photo %>" alt="" class="user-img">
       <% else %>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "user-img" %>
       <% end %>
@@ -25,8 +25,13 @@
   <div class="user-section">
     <p class="header">My desk today</p>
     <div class="d-flex justify-content-between align-items-center my-2">
-      <p class="content">Creative Hub, Floor 1, Desk</p>
-      <%= link_to "Get Directions", "#", class: "btn btn-primary btn-sm"  %>
+      <% if @user.booking_desks.any? %>
+          <p class="content"><%= @user.booking_desks.last.desk.area.name %>, <%= @user.booking_desks.last.desk.name %></p>
+          <%= link_to "Get Directions", "#", class: "btn btn-primary btn-sm"  %>
+      <% else %>
+          <p class="content">No desk yet for today 😱</p>
+          <%= link_to "Book a Desk", new_booking_desk_path, class: "btn btn-primary btn-sm"  %>
+      <% end %>
     </div>
 
   </div>
@@ -35,8 +40,25 @@
       <p class="header">Your booked rooms</p>
       <% @user.booking_rooms.each do |booking| %>
         <div class="d-flex justify-content-between align-items-center my-2">
-          <p class="content"><strong><%= booking.room.name %></strong></p>
-          <span><%= booking.starts_at.strftime("%b #{booking.starts_at.day.ordinalize} %H:%M") %> until <%= booking.starts_at.strftime("%H:%M") %></span>
+          <div>
+            <p class="content"><strong><%= booking.room.name %></strong></p>
+            <span><%= booking.starts_at.strftime("%b #{booking.starts_at.day.ordinalize} %H:%M") %> until <%= booking.starts_at.strftime("%H:%M") %></span>
+          </div>
+          <%= link_to "Unlock room", "#", class: "btn btn-primary btn-sm"  %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @lunches.any? %>
+    <div class="user-section">
+      <p class="header" id="lunch-title">Offered lunch today</p>
+      <% @lunches.each do |lunch| %>
+        <div class="d-flex justify-content-between align-items-center my-2 lunch" id="lunch_<%= lunch.id %>">
+          <p class="content"><strong><%= lunch.proposer.name %></strong> (<%= lunch.proposer.job %>)</p>
+          <div>
+            <%= link_to "Accept", accept_path(lunch_id: lunch), method: :patch, remote: true, class: "btn btn-primary btn-sm" %>
+            <%= link_to "Decline", decline_path(lunch_id: lunch), method: :patch, remote: true, class: "btn btn-light btn-sm" %>
+          </div>
         </div>
       <% end %>
     </div>

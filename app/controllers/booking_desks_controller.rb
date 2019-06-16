@@ -15,7 +15,6 @@ class BookingDesksController < ApplicationController
 
   def new
     @booking_desk = BookingDesk.new
-    # @unavailabilities = @desk.unavailability_desks
   end
 
   def edit
@@ -23,7 +22,7 @@ class BookingDesksController < ApplicationController
                                 .where("desks.area_id = #{@booking_desk.desk.area.id}")
                                 .where(starts_at: @booking_desk.starts_at)
                                 .where.not(user: current_user)
-    redirect_to booking_desk_path(@booking_desk) unless @other_bookings.any?
+    # redirect_to booking_desk_path(@booking_desk) unless @other_bookings.any?
   end
 
   def update

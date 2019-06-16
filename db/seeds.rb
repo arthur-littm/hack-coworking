@@ -1,3 +1,4 @@
+require 'faker'
 require 'csv'
 
 UnavailabilityDesk.destroy_all
@@ -10,6 +11,7 @@ Tag.destroy_all
 Desk.destroy_all
 Room.destroy_all
 Area.destroy_all
+User.destroy_all
 
 
 puts 'Creating tags'
@@ -47,5 +49,49 @@ Area.all.each do |area|
     AreaTag.create(tag: tag, area: area)
   end
 end
+
+names = %w(Alex Ben Arthur Angele Jonny)
+jobs = ["Fullstack Developer", "Backend Developer", "Frontend Developer", "Product Manager", "Fullstack Developer"]
+password = "123456"
+photos = %w(https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gu4bk6upus7v3u1wino8.jpg
+ https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ixr9unj1pvqtkfbzvlcu.jpg
+ https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg
+ https://avatars3.githubusercontent.com/u/26596127?v=4
+ https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/pmgbbo7z4bel8x732lsz.jpg)
+
+Area.all.each do |area|
+  taken = (0..(area.desk_number - (0..6).to_a.sample)).to_a.sample
+  next if taken.nil?
+  taken.times do
+    user = User.create!(name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
+      job: Faker::Job.title, email: Faker::Internet.email, password: "123456",
+      photo: Faker::Avatar.image("my-own-slug"))
+    p user
+  end
+end
+
+User.all.sample((User.count / 1.5).to_i).each do |user|
+  booking = BookingDesk.create(desk: (Area.all - [Area.first]).sample.desks.sample, user: user, starts_at: Date.today, ends_at: Date.today)
+  p booking
+end
+
+5.times do |e|
+
+  user = User.create!(name: names[e], job: jobs[e], password: password, email: "#{names[e].downcase}@gmail.com", photo: photos[e], balance: 241)
+  BookingDesk.create(desk: Area.first.desks.sample, user: user, starts_at: Date.today, ends_at: Date.today)
+
+  (user.name == "Jonny" ? 1 : [0, 1].sample).times do
+    BookingRoom.create(user: user, room: Room.all.sample, starts_at: DateTime.now + 2.hours, ends_at: DateTime.now + 3.hours)
+  end
+
+  users = User.all
+
+  Lunch.create(proposer: User.where(name: "Jonny").first, receiver: users[0])
+  Lunch.create(proposer: User.where(name: "Jonny").first, receiver: users[1])
+  p user
+
+end
+
+
 
 

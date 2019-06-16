@@ -9,11 +9,23 @@
             <label class="collection_check_boxes area-preference select-one"><%= booking.user.job %></label>
           <% end %>
         </div>
+        <p>Are you free for lunch?</p>
+        <div class="booking-choices">
+          <div class="booking-choice-container">
+            <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="" id="">
+            <label class="collection_check_boxes area-preference" for="">Yes</label>
+          </div>
+          <div class="booking-choice-container">
+            <input class="form-check-input check_boxes required d-none" type="checkbox" value="<%= tag.id %>" name="" id="">
+            <label class="collection_check_boxes area-preference" for="">No</label>
+          </div>
+        </div>
+
         <hr>
-        <%= link_to 'I don\'t care who I sit next to', booking_desk_path(@booking_desk), class: 'btn btn-gray' %>
+          <%= link_to 'I don\'t care who I sit next to', booking_desk_path(@booking_desk), class: 'btn btn-light w-100' %>
         <hr>
         <!-- TODO: update with price of booking %> -->
-        <%= f.button :submit, "Book a seat (100 SB)", class: "btn btn-primary" %>
+        <%= f.button :submit, "Book a seat (100 SB)", class: "btn btn-primary w-100" %>
       <% end %>
 
     </div>

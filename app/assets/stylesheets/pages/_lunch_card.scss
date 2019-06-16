@@ -1,55 +1,50 @@
+
+.cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lunch-title {
+  font-size: 30px;
+  margin-bottom: 3rem !important;
+  margin-top: 3rem !important;
+  // text-align: center;
+}
+
+.active-card {
+  background-color: $primary !important;
+  color: white;
+}
+
 .lunch-card {
   background-color:  white;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 10px;
-  transition-timing-function: ease-out;
-  transition: 0.7s;
-}
-
-.lunch-title {
-  font-size: 30px;
-  margin-bottom: 3rem !important;
-  margin-top: 3rem !important;
-  text-align: center;
-}
-
-.active-card {
-  border: 2px solid $primary;
-}
-
-
-.short-bio {
+  transition: 0.3s;
   display: flex;
-  // justify-content: space-between;
-  align-items: center;
-}
-
-.lunch-card > .long-bio {
-  transition-timing-function: ease-out;
-  transition: 0.7s;
-  display: none;
-}
-
-.lunch-card.active-card > .long-bio {
-  transition-timing-function: ease-out;
-  transition: 0.7s;
-  width: 100%;
-  text-align: center;
-  display: block
-}
-
-.long-bio {
-  // padding: 16px;
+  align-items: flex-start;
+  flex: 0 0 48%;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 1px $primary;
+  object-fit: cover;
 }
 
 .user-infos {
   padding-left: 16px;
+}
+
+.user-infos span {
+  opacity: .6;
+  font-size: 14px;
+}
+
+.user-infos p {
+  margin: 0;
 }
