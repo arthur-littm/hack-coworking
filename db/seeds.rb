@@ -63,9 +63,15 @@ photos = %w(https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/420519_4560049929059_1
 
   user = User.create!(name: names[e], job: jobs[e], password: password, email: "#{names[e].downcase}@gmail.com", photo: photos[e])
   BookingDesk.create(desk: Area.first.desks.sample, user: user, starts_at: Date.today, ends_at: Date.today)
-  [0, 1].sample.times do
+
+  (user.name == "Jonny" ? 1 : [0, 1].sample).times do
     BookingRoom.create(user: user, room: Room.all.sample, starts_at: DateTime.now + 2.hours, ends_at: DateTime.now + 3.hours)
   end
+
+  users = User.all
+
+  Lunch.create(proposer: User.where(name: "Jonny").first, receiver: users[0])
+  Lunch.create(proposer: User.where(name: "Jonny").first, receiver: users[1])
   p user
 
 end
