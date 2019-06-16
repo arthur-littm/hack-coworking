@@ -4,9 +4,6 @@
 }
 
 .event-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   margin: auto;
   top: 60%;
@@ -17,6 +14,7 @@
   border-width: 3px;
   border-color: $primary;
   text-align: center;
+  padding: 45px;
   object-fit: cover;
   p {
     opacity: .6;
@@ -33,6 +31,9 @@
 
 }
 
+.icon-color {
+  color: $primary;
+}
 
 
 
