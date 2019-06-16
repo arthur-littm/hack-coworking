@@ -4,7 +4,7 @@
   <div class="container">
     <div class="d-flex">
       <% if @user.photo.present? %>
-        <%= image_tag @user.photo, class: "user-img" %>
+        <img src="<%= @user.photo %>" alt="" class="user-img">
       <% else %>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "user-img" %>
       <% end %>
