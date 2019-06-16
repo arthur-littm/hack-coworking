@@ -1,5 +1,8 @@
 
-
+.cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .lunch-title {
   font-size: 30px;
   margin-bottom: 3rem !important;

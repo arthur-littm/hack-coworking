@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-12">
         <h2 class="lunch-title text-center">Want to grab lunch with someone new today!</h2>
-          <div class="d-flex">
+          <div class="d-flex cards">
             <% @users.each do |user| %>
               <div class="lunch-card">
                 <% if user.photo %>
@@ -12,7 +12,7 @@
                 <% end %>
                 <div class="user-infos">
                   <p><%= user.name %></p>
-                  <span><strong><%= user.job %></strong>, sitting in the <strong><%= user.booking_desks.last.desk.area.name %></strong></span>
+                  <span><strong><%= user.job %></strong>, sitting in the <strong><%= user.booking_desks.last.desk.area.name %></strong> area.</span>
                 </div>
               </div>
             <% end %>
