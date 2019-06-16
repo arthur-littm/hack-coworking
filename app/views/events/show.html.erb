@@ -2,7 +2,9 @@
   <div class="event-box">
     <p><i class="far fa-calendar-alt icon-color"></i> <strong><%= @event.name %></strong></p>
     <p><%= @event.starts_at %></p>
-    <p><%= @event.user%></p>
+    <p class="content">Organised by <strong><%= @event.user.displayed_name %></strong></p>
+    <p class="content event-description"><%= @event.description %></p>
   </div>
 </div>
+<div class="btn-event"><%= link_to "Attend", "#", class: "btn btn-primary" %></div>
 
