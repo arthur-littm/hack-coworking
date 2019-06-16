@@ -15,7 +15,6 @@ class BookingDesksController < ApplicationController
 
   def new
     @booking_desk = BookingDesk.new
-    # @unavailabilities = @desk.unavailability_desks
   end
 
   def edit

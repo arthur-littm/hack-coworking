@@ -4,7 +4,7 @@
   <div class="my-2">
     <% if user_signed_in? %>
       <%= link_to BookingDesk.create!(user: current_user, desk: Area.all.sample.desks.sample, starts_at: DateTime.now, ends_at: DateTime.now + 1.hour), class: "btn btn-light btn-sm" do %>
-        Random Seat (earn <i class="fas fa-coins"></i>)
+        Quick Desk (earn <i class="fas fa-coins"></i>)
       <% end %>
     <% else %>
       <%= link_to "Login", new_user_session_path %>
