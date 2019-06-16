@@ -40,8 +40,11 @@
       <p class="header">Your booked rooms</p>
       <% @user.booking_rooms.each do |booking| %>
         <div class="d-flex justify-content-between align-items-center my-2">
-          <p class="content"><strong><%= booking.room.name %></strong></p>
-          <span><%= booking.starts_at.strftime("%b #{booking.starts_at.day.ordinalize} %H:%M") %> until <%= booking.starts_at.strftime("%H:%M") %></span>
+          <div>
+            <p class="content"><strong><%= booking.room.name %></strong></p>
+            <span><%= booking.starts_at.strftime("%b #{booking.starts_at.day.ordinalize} %H:%M") %> until <%= booking.starts_at.strftime("%H:%M") %></span>
+          </div>
+          <%= link_to "Unlock room", "#", class: "btn btn-primary btn-sm"  %>
         </div>
       <% end %>
     </div>
