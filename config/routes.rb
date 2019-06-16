@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
   resources :booking_rooms, only: [ :show, :destroy ]
 
+  patch 'accept', to: "lunches#accept", as: :accept
+  patch 'decline', to: "lunches#decline", as: :decline
+
   get 'users/:id', to: "users#show", as: :user_account
 
   resources :events, only: [:new, :show, :create, :index]

@@ -16,8 +16,7 @@
                 </div>
               </div>
             <% end %>
-          </div>
-        <%= link_to "Request Lunch", "#", class: "btn btn-primary"%>
+        <%= link_to "Request Lunch", lunches_path(receiver_id: ""), method: :post, class: "btn btn-primary", id: "request" %>
       </div>
   </div>
 </div>
