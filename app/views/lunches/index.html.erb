@@ -4,7 +4,7 @@
         <h2 class="lunch-title text-center">Want to grab lunch with someone new today!</h2>
           <div class="d-flex cards">
             <% @users.first(20).each do |user| %>
-              <div class="lunch-card">
+              <div class="lunch-card" id="<%= user.id %>">
                 <% if user.photo %>
                   <%= image_tag user.photo, class: "avatar" %>
                 <% else %>

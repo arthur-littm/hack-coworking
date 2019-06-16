@@ -5,7 +5,7 @@ class LunchesController < ApplicationController
     @lunch.proposer = current_user
     @lunch.receiver = User.find(params[:receiver_id].to_i)
     if @lunch.save
-      redirect_to user_account_path(current_user)
+      redirect_to user_account_path(current_user), notice: "Lunch invite sent to #{@lunch.receiver.name} 🍔"
     else
       render :index, notice: "Oops, something went wrong!"
     end

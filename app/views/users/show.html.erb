@@ -63,6 +63,19 @@
       <% end %>
     </div>
   <% end %>
+  <% if @lunch_resquests.any? %>
+    <div class="user-section">
+      <p class="header" id="lunch-title">My lunch requests</p>
+      <% @lunch_resquests.each do |lunch| %>
+        <div class="d-flex justify-content-between align-items-center my-2 lunch" id="lunch_<%= lunch.id %>">
+          <p class="content"><strong><%= lunch.receiver.name %></strong> (<%= lunch.receiver.job %>)</p>
+          <div>
+            <span class="badge badge-primary"><%= lunch.status %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class="user-section">
     <p><i class="fas fa-calendar-week"></i> <%= link_to "Book a meeting room", "#" %></p>
     <p><i class="fas fa-coins"></i> <%= link_to "Earn more bucks", new_event_path %></p>
