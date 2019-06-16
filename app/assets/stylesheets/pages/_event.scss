@@ -4,19 +4,17 @@
 }
 
 .event-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   margin: auto;
   top: 60%;
   background: white;
-  height:200px;
-  width: 200px;
+  height:300px;
+  width: 300px;
   border-style: solid;
   border-width: 3px;
   border-color: $primary;
   text-align: center;
+  padding: 30px;
   object-fit: cover;
   p {
     opacity: .6;
@@ -33,6 +31,19 @@
 
 }
 
+.icon-color {
+  color: $primary;
+  height:10px;
+}
 
+.btn-event {
+  vertical-align: middle;
+  margin-top: 300px;
+  text-align: center;
+}
+
+.event-description {
+  font-size:13px;
+}
 
 
