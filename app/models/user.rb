@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def booking_today
     self.booking_desks.find { |booking| booking.starts_at == Date.today }
   end
+
+  def charge_snap_bucks(bucks)
+    balance >= bucks ? self.update(balance: balance - bucks) : false
+  end
 end
